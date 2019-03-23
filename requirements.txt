@@ -1,0 +1,4 @@
+Werkzeug==0.12.2
+Flask==0.12.2
+Pytest==3.2.1
+Mock==2.0.0
