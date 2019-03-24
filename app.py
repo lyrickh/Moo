@@ -15,14 +15,27 @@ def initialise_db():
 
 
 @app.route('/')
-def hello_world():
-    return 'Flask Dockerized'
+def landing():
+    return 'Search for customers using url "/search/<surname>", choose a specific customer with ' \
+           '"/search/<surname>/<index>"'
 
 
-@app.route('/search/<string:surname>', methods=['GET', 'POST'])
-def search(surname):
+@app.route('/search/<string:surname>', methods=['GET', 'POST'], defaults={'index': None})
+@app.route('/search/<string:surname>/<int:index>', methods=['GET', 'POST'])
+def search(surname, index):
+    """ Return json list of dicts for all customers matching a given surname or single dict
+        if index param is specified """
     customers = search_customers_by_surname(surname)
-    return json.dumps(customers)
+
+    if index is None:
+        # Return list of dicts of all customers matching
+        return json.dumps(customers)
+
+    if len(customers) < index:
+        return "Customer not found!"
+
+    # Return single customer dict corresponding to index in the original returned list
+    return json.dumps(customers[index])
 
 
 if __name__ == '__main__':

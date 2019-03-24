@@ -23,3 +23,11 @@ def test_search_customers_by_field(setup_db):
     results = db.search_customers_by_field("first_name", "Alice")
 
     assert results == [customer2]
+
+    results = db.search_customers_by_field("last_name", "nonsense")
+
+    assert  results == []
+
+    results = db.search_customers_by_field("nonsense", "nonsense")
+
+    assert results == []
