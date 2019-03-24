@@ -2,6 +2,9 @@
 Pretend lightweight db, ideally this should be a sql database with indexes that can be queried, for speed
 """
 
+from functools import lru_cache
+
+
 CUSTOMER_DATA = list()
 
 
@@ -15,6 +18,7 @@ def add_customer_to_db(customer):
     CUSTOMER_DATA.append(customer)
 
 
+@lru_cache
 def search_customers_by_field(field, value):
     """
     Iterates through all customer data, returning rows where the column 'field' matches 'value'
