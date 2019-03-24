@@ -1,6 +1,6 @@
-# Some Title
+# Address Book API
 
-Description of what the app does
+API that provides the ability to search an address book for a customer based on surname
 
 ## Installation Instructions
 Requires Docker to be installed
@@ -9,3 +9,6 @@ Requires Docker to be installed
 2. run cmd "docker build -t python-moo ."
 3. run cmd "docker run -d -p 5000:5000 python-moo"
 4. The application is now running on http://127.0.0.1:5000/ !
+
+## Credit
+Mock data generated from https://www.mockaroo.com
