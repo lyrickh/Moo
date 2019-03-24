@@ -18,7 +18,7 @@ def add_customer_to_db(customer):
     CUSTOMER_DATA.append(customer)
 
 
-@lru_cache
+@lru_cache(maxsize=128)
 def search_customers_by_field(field, value):
     """
     Iterates through all customer data, returning rows where the column 'field' matches 'value'
