@@ -11,10 +11,10 @@ Requires Docker to be installed
 4. The application is now running on http://127.0.0.1:5000/ !
 
 ## How to use the API
-Navigate to "http://127.0.0.1:5000/search/\<surname>"  to search for all customers with a given surname from the
+Navigate to "http://127.0.0.1:5000/search/&lt;surname&gt;"  to search for all customers with a given surname from the
 csv of mock data.
 
-Specific individual customers can be retrieved using the url "http://127.0.0.1:5000/search/\<surname>/\<index>" where
+Specific individual customers can be retrieved using the url "http://127.0.0.1:5000/search/&lt;surname&gt;/&lt;index&gt;" where
 index is the location of the customer desired in the list of all customers with a given surname (i.e. 0 for the first
 entry)
 

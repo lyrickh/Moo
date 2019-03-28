@@ -16,8 +16,8 @@ def initialise_db():
 
 @app.route('/')
 def landing():
-    return 'Search for customers using url "/search/<surname>", choose a specific customer with ' \
-           '"/search/<surname>/<index>"'
+    return 'Search for customers using url "/search/&lt;surname&gt;", choose a specific customer with ' \
+           '"/search/&lt;surname&gt;/&lt;index&gt;"'
 
 
 @app.route('/search/<string:surname>', methods=['GET', 'POST'], defaults={'index': None})
